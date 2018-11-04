@@ -2,19 +2,47 @@
 layout: body
 ---
 <div>
-  {% for post in site.posts %}
-    <article class="uk-article">
+  {% for post in paginator.posts %}
+  <article class="uk-article">
 
-        <h1 class="uk-article-title"><a class="uk-link-reset" href="{{ site.url }}{{ post.url | relative_url }}">{{ post.title | markdownify | strip_html }}</a></h1>
-    
-        <p class="uk-article-meta">Written by {{ page.author }} on {{ post.date | date: "%B %-d, %Y" }}. Posted in <a href="#">Blog</a></p>
-    
-        <p class="uk-text-lead">{{ post.excerpt | strip_html | escape }}</p>  
-        <div class="uk-grid-small uk-child-width-auto" uk-grid>
-            <div>
-                <a class="uk-button uk-button-text" href="{{ site.url }}{{ post.url | relative_url }}">Read more</a>
-            </div>
-        </div>
-    </article>
+    <h1 class="uk-article-title"><a class="uk-link-reset" href="{{ site.url }}{{ post.url | relative_url }}">{{
+        post.title | markdownify | strip_html }}</a></h1>
+
+    <p class="uk-article-meta">Written by {{ page.author }} on {{ post.date | date: "%B %-d, %Y" }}. Posted in <a href="#">Blog</a></p>
+
+    <p class="uk-text-lead">{{ post.excerpt | strip_html | escape }}</p>
+    <div class="uk-grid-small uk-child-width-auto" uk-grid>
+      <div>
+        <a class="uk-button uk-button-text" href="{{ site.url }}{{ post.url | relative_url }}">Read more</a>
+      </div>
+    </div>
+  </article>
+  <hr class="uk-divider-icon">
   {% endfor %}
-  </div>
+
+  {% if paginator.total_pages > 1 %}
+  <ul class="uk-pagination uk-flex-right uk-margin-medium-top" uk-margin>
+    {% if paginator.previous_page %}
+    <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><span
+          uk-pagination-previous></span></a></li>
+    {% else %}
+    <li class="uk-disabled"><a href="#"><span uk-pagination-previous></span></a></li>
+    {% endif %}
+    {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+    <li class="uk-active"><span>{{ page }}</span></li>
+    {% elsif page == 1 %}
+    <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+    {% else %}
+    <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% if paginator.next_page %}
+    <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><span uk-pagination-next></span></a></li>
+    {% else %}
+    <li class="uk-disabled"><a href="#"><span uk-pagination-next></span></a></li>
+    {% endif %}
+  </ul>
+  {% endif %}
+</div>
+
