@@ -10,7 +10,16 @@ body {
 }
 
 .posts {
-    
+       padding: 6em; 
+}
+.site {
+    margin: auto;
+    padding: 2em;
+}
+.site .name {
+    font-size: 6em;
+} .site .description {
+    font-size: 3em;
 }
 
 .post {
@@ -24,4 +33,13 @@ body {
 .content .post {
     padding: 6em;
     background-color: #f3f3f3;
+}
+.post .title {
+    font-size: 3em;
+}
+.info {
+    display: inline-flex;
+}
+.info .date, .info .author {
+    font-size: 0.8em;
 }

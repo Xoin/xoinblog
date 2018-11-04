@@ -1,9 +1,12 @@
 <html>
     <head>
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/css.css">
+        <link rel="stylesheet" href="{{ site.url }}/css/css.css">
     </head>
     <body>
         <div class="content">
+            <div class="site">
+                <div class="name">{{ site.title }}</div> <div class="description">{{ site.description }}</div>
+            </div>
             {{content}}
         </div>
     </body>
