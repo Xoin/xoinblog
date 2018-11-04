@@ -1,7 +1,13 @@
 ---
 layout: body
 ---
-##{{ page.title }}##
-<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+<div class="post">
+    <div class="title">{{ page.title }}</div>
+    <div class="info">
+        <div class="date"><{{ page.date | date_to_string }}/div> <div class="author">{{ page.author }}</div>
+    </div>
+    <div class="body">
+            {{ content }}
+    </div>
+</div>
 
-{{ content }}
