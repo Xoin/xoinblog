@@ -9,5 +9,5 @@ layout: body
     <h1 class="uk-article-title"><a class="uk-link-reset" href="">{{ page.title }}</a></h1>
     <p class="uk-article-meta">Written by {{ page.author }} on {{ page.date | date_to_string }}. Posted in <a href="#">Blog</a></p>
     <p class="uk-text-lead">{{ page.excerpt }}</p>
-    {{ content | remove_first:page.excerpt }}
+    {{ page.content | remove_first:page.excerpt }}
 </article>
