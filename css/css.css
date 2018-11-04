@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(10, 21, 37);
+}
+
+.content {
+    width: calc(99%);
+    background-color: #ffffff;
+    margin: auto;
+}
