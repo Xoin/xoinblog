@@ -12,13 +12,14 @@ body {
 .posts {
        padding: 6em; 
 }
-.site {
+.content .site {
     margin: auto;
     padding: 2em;
 }
-.site .name {
+.content .site .name {
     font-size: 6em;
-} .site .description {
+}
+ .content .site .description {
     font-size: 3em;
 }
 
@@ -34,12 +35,12 @@ body {
     padding: 6em;
     background-color: #f3f3f3;
 }
-.post .title {
+.content .post .title {
     font-size: 3em;
 }
-.info {
+.content .info {
     display: inline-flex;
 }
-.info .date, .info .author {
+.content .info .date, .content  .info .author {
     font-size: 0.8em;
 }

@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Trying this blogging thing..."
 excerpt_separator: <!--more-->
+author: xoin
 ---
-
-# Welcome
-
 **Hello world**, this is my first Jekyll blog post.
 <!--more-->
 I hope you like it!
+
+Mainly here for testing
