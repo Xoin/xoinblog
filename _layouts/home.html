@@ -6,8 +6,7 @@ layout: body
   <article class="uk-article">
     <h1 class="uk-article-title"><a class="uk-link-reset" href="{{ site.url }}{{ post.url | relative_url }}">{{ post.title | markdownify | strip_html }}</a></h1>
     <p class="uk-article-meta">Written by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}. Posted in <a href="#">Blog</a></p>
-
-    <p class="uk-text-lead">{{ post.excerpt | strip_html | escape }}</p>
+    {{ post.excerpt }}
     <div class="uk-grid-small uk-child-width-auto" uk-grid>
       <div>
         <a class="uk-button uk-button-text" href="{{ site.url }}{{ post.url | relative_url }}">Read more</a>
