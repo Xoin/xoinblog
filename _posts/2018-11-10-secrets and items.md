@@ -28,7 +28,7 @@ Asterix has 26 secret levels, in the first level two can be found easily by brea
 The first byte indicates how much data it will have. These are unsinged, in the case of 6E this is 110 bytes. The ``00 40 01 00 01 FF AA 55 00 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F`` is the same for this type of level. The levels are drawn from the top left to the bottom left and then moved one tile to the right till the level is filled. This is different compared to normal levels. What it has incommon with normal levels is that tiles can be repeated. Repeating is done by have one byte indicate how often and then another for the tile ID. But just like normal levels just one byte for something is fine, just make sure everything adds up at the end.
 
 If you grab the import stuff and create new lines every 16 bytes you can acuretlly dump or write levels
-![image](/images/secrets.png)
+![image]({{ site.url }}/images/secrets.png)
 
 ## Items
 
